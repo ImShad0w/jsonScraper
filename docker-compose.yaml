@@ -1,0 +1,10 @@
+# Hi ha 1 contenidor
+# 1. php amb apache (la nostra aplicació web) que la trobaràs a http://localhost:8080
+services:
+  web:
+    #La imatge php:apache no conté els drivers de mysql, hem de fer una imatge a mida
+    image: php:apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./php:/var/www/html
